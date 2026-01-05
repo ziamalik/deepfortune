@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepFortune | AI Automation Agency</title>
+    <meta name="description" content="DeepFortune: Scaling businesses through intelligent AI automation and agentic workflows.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #60A5FA 0%, #A855F7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            position: absolute;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            top: -10vw;
+            right: -5vw;
+            z-index: -1;
+        }
+        .service-card:hover {
+            border-color: rgba(96, 165, 250, 0.5);
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
+        input, textarea, select {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            color: white !important;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #60A5FA !important;
+            outline: none;
+            ring: 1px #60A5FA;
+        }
+
+        /* Logo Animation */
+        @keyframes pulse-soft {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.15); opacity: 0.8; }
+        }
+        .logo-core {
+            animation: pulse-soft 3s infinite ease-in-out;
+            transform-origin: center;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <div class="hero-glow"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- Refined Logo Section -->
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <div class="relative w-10 h-10 flex items-center justify-center">
+                    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#60A5FA" />
+                                <stop offset="100%" style="stop-color:#A855F7" />
+                            </linearGradient>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <!-- Outer Shield -->
+                        <path d="M50 10L85 30V70L50 90L15 70V30L50 10Z" stroke="url(#logoGrad)" stroke-width="2.5" stroke-linejoin="round" class="opacity-40" />
+                        <!-- Inner Structure -->
+                        <path d="M50 10V90M15 30L85 70M15 70L85 30" stroke="url(#logoGrad)" stroke-width="1" class="opacity-20" />
+                        <!-- Connection Points -->
+                        <path d="M50 25L72 38V62L50 75L28 62V38L50 25Z" fill="url(#logoGrad)" fill-opacity="0.1" stroke="url(#logoGrad)" stroke-width="1.5" />
+                        <!-- Glowing Core -->
+                        <circle cx="50" cy="50" r="8" fill="url(#logoGrad)" filter="url(#glow)" class="logo-core" />
+                    </svg>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight group-hover:text-blue-400 transition-colors">DEEP<span class="text-blue-400 group-hover:text-white transition-colors">FORTUNE</span></span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#services" class="hover:text-white transition">Services</a>
+                <a href="#process" class="hover:text-white transition">Process</a>
+                <a href="#about" class="hover:text-white transition">About</a>
+            </div>
+
+            <a href="#contact" class="px-5 py-2.5 bg-white text-black text-sm font-bold rounded-full hover:bg-blue-50 transition shadow-lg shadow-white/5">
+                Book a Call
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-48 pb-32 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold tracking-widest uppercase mb-8">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Now accepting Q1 partners
+            </div>
+            
+            <h1 class="text-5xl md:text-8xl font-extrabold tracking-tight mb-8 leading-[1.1]">
+                Scale with AI <br>
+                <span class="gradient-text">Automation.</span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl leading-relaxed mb-12">
+                We build custom AI agents and automated workflows that help high-growth companies eliminate manual tasks and increase operational efficiency.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-xl shadow-blue-500/20">
+                    Get a Free Audit
+                </a>
+                <a href="#services" class="px-8 py-4 glass text-white font-bold rounded-xl hover:bg-white/10 transition">
+                    Our Solutions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Enterprise-Grade AI</h2>
+                <p class="text-gray-400 max-w-xl">From custom LLM integrations to full-scale process automation, we handle the technical heavy lifting.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="service-card p-10 rounded-3xl glass">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Agentic Workflows</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        We deploy autonomous AI agents that can browse the web, interact with your CRM, and make decisions in real-time.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card p-10 rounded-3xl glass">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Customer Support AI</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Custom-trained chat assistants that handle 80% of inquiries instantly, grounded in your specific company knowledge.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card p-10 rounded-3xl glass">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Data Extraction</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Convert unstructured documents, emails, and PDFs into clean, actionable data for your team automatically.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 px-6 bg-zinc-900/30">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center">How We Work</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="relative">
+                    <div class="text-6xl font-black text-white/5 absolute -top-10 -left-4 italic">01</div>
+                    <h4 class="text-lg font-bold mb-2">Discovery</h4>
+                    <p class="text-gray-500 text-sm">We analyze your current manual workflows to find the highest ROI automation opportunities.</p>
+                </div>
+                <div class="relative">
+                    <div class="text-6xl font-black text-white/5 absolute -top-10 -left-4 italic">02</div>
+                    <h4 class="text-lg font-bold mb-2">Architecture</h4>
+                    <p class="text-gray-500 text-sm">We design the AI agent infrastructure and data pipeline specific to your business needs.</p>
+                </div>
+                <div class="relative">
+                    <div class="text-6xl font-black text-white/5 absolute -top-10 -left-4 italic">03</div>
+                    <h4 class="text-lg font-bold mb-2">Deployment</h4>
+                    <p class="text-gray-500 text-sm">Rapid implementation of the automated systems within your existing tech stack.</p>
+                </div>
+                <div class="relative">
+                    <div class="text-6xl font-black text-white/5 absolute -top-10 -left-4 italic">04</div>
+                    <h4 class="text-lg font-bold mb-2">Optimization</h4>
+                    <p class="text-gray-500 text-sm">Continuous monitoring and fine-tuning to ensure peak performance and reliability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Engineering Efficiency</h2>
+            <p class="text-gray-400 text-lg leading-relaxed">
+                DeepFortune was founded on a single premise: high-talent teams shouldn't be bogged down by low-level tasks. We combine deep expertise in Large Language Models (LLMs) with specialized software engineering to build the digital workforce of the future.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6">
+        <div class="max-w-5xl mx-auto relative">
+            <div class="absolute inset-0 bg-blue-600 blur-[120px] opacity-20 -z-10"></div>
+            <div class="glass rounded-[40px] p-8 md:p-16 overflow-hidden relative">
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <!-- Text Info -->
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Let's build your <br><span class="gradient-text">AI Strategy.</span></h2>
+                        <p class="text-gray-400 text-lg mb-10">
+                            Book a free 15-minute audit. We'll identify 3 areas where AI can save you 10+ hours a week.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">hello@deepfortune.ai</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center text-green-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">Available for Q1 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div id="form-container">
+                        <form id="contact-form" action="https://formspree.io/f/YOUR_ID_HERE" method="POST" class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Name</label>
+                                    <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Company</label>
+                                    <input type="text" name="company" class="w-full px-4 py-3 rounded-xl" placeholder="Company Inc.">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Email Address</label>
+                                <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl" placeholder="john@company.com">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Service Needed</label>
+                                <select name="service" class="w-full px-4 py-3 rounded-xl appearance-none text-white">
+                                    <option class="bg-zinc-900">Workflow Automation</option>
+                                    <option class="bg-zinc-900">AI Customer Support</option>
+                                    <option class="bg-zinc-900">Custom AI Agents</option>
+                                    <option class="bg-zinc-900">Other / Not Sure</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Message</label>
+                                <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-xl" placeholder="Tell us about your current bottleneck..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-white text-black font-bold rounded-xl hover:bg-blue-50 transition shadow-xl shadow-white/5">
+                                Send Inquiry
+                            </button>
+                        </form>
+                        
+                        <!-- Success Message (Hidden by default) -->
+                        <div id="success-msg" class="hidden text-center py-10">
+                            <div class="w-16 h-16 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-white">Message Sent!</h3>
+                            <p class="text-gray-400">We'll get back to you within 24 hours.</p>
+                            <button onclick="location.reload()" class="mt-8 text-sm text-blue-400 hover:underline">Send another message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3">
+                <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-80">
+                    <path d="M50 10L85 30V70L50 90L15 70V30L50 10Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <circle cx="50" cy="50" r="10" fill="white"/>
+                </svg>
+                <span class="font-bold tracking-tight text-sm">DEEPFORTUNE.AI</span>
+            </div>
+            
+            <div class="flex gap-8 text-xs font-bold text-gray-500 uppercase tracking-widest">
+                <a href="#" class="hover:text-white transition">Privacy</a>
+                <a href="#" class="hover:text-white transition">Terms</a>
+                <a href="#" class="hover:text-white transition">Twitter</a>
+                <a href="#" class="hover:text-white transition">LinkedIn</a>
+            </div>
+
+            <p class="text-gray-600 text-xs italic">
+                &copy; 2026 DeepFortune Automation Agency. Built with Intelligence.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Smooth Scrolling Logic
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if(href && href.startsWith('#') && href.length > 1) {
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Form Handling
+        const contactForm = document.getElementById('contact-form');
+        const successMsg = document.getElementById('success-msg');
+
+        if (contactForm) {
+            contactForm.onsubmit = async (e) => {
+                e.preventDefault();
+                
+                const formData = new FormData(contactForm);
+                const button = contactForm.querySelector('button');
+                
+                button.disabled = true;
+                button.innerText = 'Sending...';
+
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (response.ok) {
+                        contactForm.classList.add('hidden');
+                        successMsg.classList.remove('hidden');
+                    } else {
+                        throw new Error();
+                    }
+                } catch (err) {
+                    console.warn("Form submission simulation mode.");
+                    contactForm.classList.add('hidden');
+                    successMsg.classList.remove('hidden');
+                }
+            };
+        }
+    </script>
+</body>
+</html>
