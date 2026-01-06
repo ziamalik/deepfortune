@@ -7,6 +7,10 @@
     <meta name="description" content="DeepFortune: Scaling businesses through intelligent AI automation and agentic workflows.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google reCAPTCHA v3 - Replace YOUR_V3_SITE_KEY_HERE with your new v3 Site Key -->
+    <script src="https://www.google.com/recaptcha/api.js?render=YOUR_V3_SITE_KEY_HERE"></script>
+    
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -57,6 +61,9 @@
             animation: pulse-soft 3s infinite ease-in-out;
             transform-origin: center;
         }
+
+        /* Hide the v3 Badge if you prefer, but Google requires you to include the TOS in your footer if you do */
+        .grecaptcha-badge { visibility: hidden; }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -65,7 +72,6 @@
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/50 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <!-- Refined Logo Section -->
             <div class="flex items-center gap-3 group cursor-pointer">
                 <div class="relative w-10 h-10 flex items-center justify-center">
                     <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,13 +88,9 @@
                                 </feMerge>
                             </filter>
                         </defs>
-                        <!-- Outer Shield -->
                         <path d="M50 10L85 30V70L50 90L15 70V30L50 10Z" stroke="url(#logoGrad)" stroke-width="2.5" stroke-linejoin="round" class="opacity-40" />
-                        <!-- Inner Structure -->
                         <path d="M50 10V90M15 30L85 70M15 70L85 30" stroke="url(#logoGrad)" stroke-width="1" class="opacity-20" />
-                        <!-- Connection Points -->
                         <path d="M50 25L72 38V62L50 75L28 62V38L50 25Z" fill="url(#logoGrad)" fill-opacity="0.1" stroke="url(#logoGrad)" stroke-width="1.5" />
-                        <!-- Glowing Core -->
                         <circle cx="50" cy="50" r="8" fill="url(#logoGrad)" filter="url(#glow)" class="logo-core" />
                     </svg>
                 </div>
@@ -147,7 +149,6 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
                 <div class="service-card p-10 rounded-3xl glass">
                     <div class="w-12 h-12 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -160,7 +161,6 @@
                     </p>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="service-card p-10 rounded-3xl glass">
                     <div class="w-12 h-12 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -173,7 +173,6 @@
                     </p>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="service-card p-10 rounded-3xl glass">
                     <div class="w-12 h-12 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -263,7 +262,10 @@
 
                     <!-- Contact Form -->
                     <div id="form-container">
-                        <form id="contact-form" action="https://formspree.io/f/mjgkdwll" method="POST" class="space-y-4">
+                        <form id="contact-form" action="https://formspree.io/f/YOUR_ID_HERE" method="POST" class="space-y-4">
+                            <!-- Invisible field for reCAPTCHA v3 token -->
+                            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Name</label>
@@ -291,12 +293,12 @@
                                 <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Message</label>
                                 <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-xl" placeholder="Tell us about your current bottleneck..."></textarea>
                             </div>
+                            
                             <button type="submit" class="w-full py-4 bg-white text-black font-bold rounded-xl hover:bg-blue-50 transition shadow-xl shadow-white/5">
                                 Send Inquiry
                             </button>
                         </form>
                         
-                        <!-- Success Message (Hidden by default) -->
                         <div id="success-msg" class="hidden text-center py-10">
                             <div class="w-16 h-16 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -332,12 +334,12 @@
             </div>
 
             <p class="text-gray-600 text-xs italic">
-                &copy; 2026 DeepFortune Automation Agency. Built with Intelligence.
+                &copy; 2026 DeepFortune Automation Agency. Built with Intelligence. <br>
+                <span class="text-[10px] opacity-30 mt-2 block">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" class="underline">Privacy Policy</a> and <a href="https://policies.google.com/terms" class="underline">Terms of Service</a> apply.</span>
             </p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
         // Smooth Scrolling Logic
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -353,7 +355,7 @@
             });
         });
 
-        // Form Handling
+        // Form Handling for reCAPTCHA v3
         const contactForm = document.getElementById('contact-form');
         const successMsg = document.getElementById('success-msg');
 
@@ -361,33 +363,50 @@
             contactForm.onsubmit = async (e) => {
                 e.preventDefault();
                 
-                const formData = new FormData(contactForm);
                 const button = contactForm.querySelector('button');
-                
                 button.disabled = true;
-                button.innerText = 'Sending...';
+                button.innerText = 'Verifying...';
 
-                try {
-                    const response = await fetch(contactForm.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: { 'Accept': 'application/json' }
+                // Execute reCAPTCHA v3
+                grecaptcha.ready(function() {
+                    // Replace YOUR_V3_SITE_KEY_HERE with your new v3 Site Key
+                    grecaptcha.execute('6LcWW0EsAAAAAFViaILHP3Q5SL7dquwZfLp1SuQh', {action: 'submit'}).then(async function(token) {
+                        
+                        // Add token to form data
+                        document.getElementById('g-recaptcha-response').value = token;
+                        
+                        const formData = new FormData(contactForm);
+                        button.innerText = 'Sending...';
+
+                        try {
+                            const response = await fetch(contactForm.action, {
+                                method: 'POST',
+                                body: formData,
+                                headers: { 'Accept': 'application/json' }
+                            });
+
+                            if (response.ok) {
+                                contactForm.classList.add('hidden');
+                                successMsg.classList.remove('hidden');
+                            } else {
+                                throw new Error();
+                            }
+                        } catch (err) {
+                            console.warn("Form submission error or simulation mode.");
+                            // Visual success for testing
+                            if(contactForm.action.includes('mjgkdwll')) {
+                                 contactForm.classList.add('hidden');
+                                 successMsg.classList.remove('hidden');
+                            } else {
+                                alert("There was an error sending your message. Please try again.");
+                                button.disabled = false;
+                                button.innerText = 'Send Inquiry';
+                            }
+                        }
                     });
-
-                    if (response.ok) {
-                        contactForm.classList.add('hidden');
-                        successMsg.classList.remove('hidden');
-                    } else {
-                        throw new Error();
-                    }
-                } catch (err) {
-                    console.warn("Form submission simulation mode.");
-                    contactForm.classList.add('hidden');
-                    successMsg.classList.remove('hidden');
-                }
+                });
             };
         }
     </script>
 </body>
-
 </html>
